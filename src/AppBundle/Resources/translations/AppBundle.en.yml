@@ -1,0 +1,147 @@
+productos:
+        'Products'
+producto:
+        'Product'
+agregarprod:
+        'Product add'
+categorias:
+        'Categories'
+agregarcat:
+        'Category add'
+personas:
+        'Persons'
+agregarpers:
+        'Person add'
+list:
+        'List'
+nombre:
+        'Name'
+precio:
+        'Price'
+descripcion:
+        'Description'
+borrar:
+        'Delete'
+editar:
+        'Edit'
+entrar:
+        'Entry'
+registrarse:
+        'Sign in'
+nomUs:
+        'UserName'
+clave:
+        'Password'
+title:
+    error:
+        'Error'
+    list:
+        prod:
+            'Product list'
+        cat:
+            'Category list'
+        pers:
+            'Person list'
+        forcat:
+            'Product list of category '
+        prodcat:
+            'Listado de todos los productos ordenados por categorias'
+        circuit:
+            'Circuit list'
+        race:
+            'Race list'
+detalles:
+        'Details'
+email:
+        'Email'
+tel:
+        'Telephone'
+ver:
+        'View'
+id:
+        'Identificator'
+edad:
+        'Age'
+nac:
+        'Date of born'
+altura:
+        'Heigth'
+sexo:
+        'Sex'
+desc:
+        'Descendents Number'
+vehiculo:
+        'Vehicle?'
+lenguaje:
+        'Language'
+ningles:
+        'English level'
+urlpersonal:
+        'Personal website'
+debitoCredito:
+        'Cedit card'
+ncuenta:
+        'IBAN number of bank'
+save:
+        'Save'
+saveAdd:
+        'Save and Add'
+categoria:
+        'Category'
+inicio:
+        'Home'
+identificador:
+        'Identificator'
+carrera:
+        'Race'
+distancia:
+        'Distance'
+localidad:
+        'City'
+tipo:
+        'Tipe'
+fecha:
+        'Date'
+precio:
+        'Price'
+web:
+        'Web'
+circuito:
+        'Circuit'
+ncarreras:
+        'Number of races'
+clasificacion:
+        'Clasification'
+clasificacionde:
+        'Clasification of'
+add:
+    position:
+        'Position add'
+    circuit:
+        'Circuit add'
+    race:
+        'Race add'
+races:
+        'Races'
+circuits:
+        'Circuits'
+corredor:
+        'Runner'
+tiempo:
+        'Time'
+posicion:
+        'Position'
+practicas:
+        'Practices'
+iniciocontenido1:
+        'This website aims to display racing and classifications.'
+iniciocontenido2:
+        'In addition, a user can add runs and circuits.'
+iniciocontenido3:
+        'There is a link to add positions in a classification. It made sense, but it is to observe that the classification is automatically sorted.'
+iniciocontenido4:
+        'The ratings are intended to be added using files.'
+iniciocontenido5:
+        'There is an administrator with admin name and admin password. A user with dws name and dws password.'
+iniciotitulo:
+        'Popular races'

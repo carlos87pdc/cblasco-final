@@ -1,0 +1,147 @@
+productos:
+        'Productos'
+producto:
+        'Producto'
+agregarprod:
+        'Agregar Producto'
+categorias:
+        'Categorias'
+agregarcat:
+        'Agregar Categoria'
+personas:
+        'Personas'
+agregarpers:
+        'Agregar Persona'
+list:
+        'Ver Listado'
+nombre:
+        'Nombre'
+precio:
+        'Precio'
+descripcion:
+        'Descripcion'
+borrar:
+        'Borrar'
+editar:
+        'Editar'
+entrar:
+        'Entrar'
+registrarse:
+        'Registrarse'
+nomUs:
+        'Nombre de Usuario'
+clave:
+        'Contraseña'
+title:
+    error:
+        'Error'
+    list:
+        prod:
+            'Listado de productos'
+        cat:
+            'Listado de categorias'
+        pers:
+            'Listado de Personas'
+        forcat:
+            'Listado de productos de la categoria '
+        prodcat:
+            'Listado de todos los productos ordenados por categorias'
+        circuit:
+            'Listado de circuitos'
+        race:
+            'Listado de carreras'
+detalles:
+        'Detalles'
+nombre:
+        'Nombre'
+email:
+        'Email'
+tel:
+        'Teléfono'
+ver:
+        'Ver'
+id:
+        'Identificador'
+edad:
+        'Edad'
+nac:
+        'Fecha de nacimiento'
+altura:
+        'Altura'
+sexo:
+        'Sexo'
+desc:
+        'Numero de descendientes'
+vehiculo:
+        'Vehículo propio?'
+lenguaje:
+        'Lenguaje'
+ningles:
+        'Nivel de Ingles'
+urlpersonal:
+        'Url Personal'
+debitoCredito:
+        'Targeta de debito Credito'
+ncuenta:
+        'Numero IBAN cuenta bancaria'
+save:
+        'Guardar'
+saveAdd:
+        'Guardar y continuar'
+categoria:
+        'Categoria'
+inicio:
+        'Inicio'
+identificador:
+        'identificador'
+carrera:
+        'Carrera'
+distancia:
+        'Distancia'
+localidad:
+        'Localidad'
+tipo:
+        'Tipo'
+fecha:
+        'Fecha'
+precio:
+        'Precio'
+web:
+        'Web'
+circuito:
+        'Circuito'
+ncarreras:
+        'Numero de carreras'
+clasificacion:
+        'Clasificación'
+clasificacionde:
+        'Clasificación de'
+add:
+    position:
+        'Añadir posicion'
+    circuit:
+        'Añadir circuito'
+    race:
+        'Añadir carrera'
+races:
+        'Carreras'
+circuits:
+        'Circuitos'
+corredor:
+        'Corredor'
+tiempo:
+        'Tiempo'
+practicas:
+        'Practicas'
+iniciocontenido1:
+        'Este sitio web tiene como finalidad la visualización de carreras y clasificaciones.'
+iniciocontenido2:
+        'Además un unsuario puede añadir carreras y circuitos.'
+iniciocontenido3:
+        'Existe un enlace para poder añadir posiciones en una clasificación. No tiene mucho sentido, pero es para poder observar que la clasificación se ordena automaticamente.'
+iniciocontenido4:
+        'La clasificaciones están pensadas para ser añadidas mediante ficheros.'
+iniciocontenido5:
+        'Existe un administrador con nombre admin y contraseña admin. Existe un usuario con nombre dws y contraseña dws'
+iniciotitulo:
+        'Carreras Populares'

@@ -1,0 +1,75 @@
+# To get started with security, check out the documentation:
+# http://symfony.com/doc/current/book/security.html
+security:
+
+    # http://symfony.com/doc/current/book/security.html#where-do-users-come-from-user-providers
+    providers:
+        #in_memory:
+        #    memory: 
+        #        users:
+        #            ryan:
+        #                password: ryan
+        #                roles: 'ROLE_USER'
+        #            peret:
+        #                password: peret1
+        #                roles: 'ROLE_USER'
+        #            admin:
+        #                password: admin
+        #                roles: 'ROLE_ADMIN'
+        fos_userbundle:
+            id: fos_user.user_provider.username_email
+
+    encoders:
+        FOS\UserBundle\Model\UserInterface: bcrypt
+        #Symfony\Component\Security\Core\User\User:
+
+    role_hierarchy:
+        ROLE_ADMIN:       ROLE_USER
+        ROLE_SUPER_ADMIN: ROLE_ADMIN
+
+    firewalls:
+        #dev:
+        #    pattern: ^/(_(profiler|wdt)|css|images|js)/
+        #    security: false
+        #my_secured_area:
+        #    anonymous: ~
+        #    http_basic: ~
+        main:
+            pattern: ^/
+            #form_login:
+            #    provider: fos_userbundle
+            #    csrf_token_generator: security.csrf.token_manager               
+            #logout:       true
+            anonymous:    true
+            logout:
+                path:   fos_user_security_logout
+            form_login:
+                provider: fos_userbundle
+                csrf_token_generator: security.csrf.token_manager
+                login_path: fos_user_security_login
+                check_path: fos_user_security_check
+
+
+            # activate different ways to authenticate
+
+            # http_basic: ~
+            # http://symfony.com/doc/current/book/security.html#a-configuring-how-your-users-will-authenticate
+
+            # form_login: ~
+            # http://symfony.com/doc/current/cookbook/security/form_login_setup.html
+       
+    access_control:
+        - { path: ^/[a-z]+/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/[a-z]+/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/[a-z]+/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/[a-z]+/race/new, roles: [ROLE_USER] }
+        - { path: ^/[a-z]+/race/list, roles: [ROLE_USER] }
+        - { path: ^/[a-z]+/circuit/new, roles: [ROLE_USER] }
+        - { path: ^/[a-z]+/circuit/list, roles: [ROLE_USER] }
+        - { path: ^/[a-z]+/position/new, roles: [ROLE_USER] }
+        - { path: ^/[a-z]+/race/position, roles: [ROLE_USER] }
+        - { path: ^/[a-z]+/race/edit, roles: ROLE_ADMIN }
+        - { path: ^/[a-z]+/race/delete, roles: ROLE_ADMIN }
+        - { path: ^/[a-z]+/circuit/edit, roles: ROLE_ADMIN }
+        - { path: ^/[a-z]+/circuit/delete, roles: ROLE_ADMIN }
+

@@ -1,0 +1,104 @@
+{% trans_default_domain 'AppBundle' %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title></title>
+    {% block stylesheets %}{% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"> 
+    <link href="T6/styles.css" rel="stylesheet">
+</head>
+<body>
+
+   <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+
+
+        <div id="navbar" class="navbar-collapse navbar-left collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="/{{ app.request.locale }}"><span
+                    class="glyphicon glyphicon-home" aria-hidden="true"></span> {{ 'inicio' | trans }}</a></li>
+                    
+                                
+                                <li class="dropdown"><a href="#" class="dropdown-toggle"
+                                data-toggle="dropdown" role="button" aria-haspopup="true"
+                                aria-expanded="false">{{ 'races' | trans }} <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="{{ path('carreraNew') }}">{{ 'add.race' | trans }}</a></li>
+                                    <li><a href="{{ path('carreraList') }}">{{ 'list' | trans }}</a></li>
+
+                                </ul></li>
+                                <li class="dropdown"><a href="#" class="dropdown-toggle"
+                                data-toggle="dropdown" role="button" aria-haspopup="true"
+                                aria-expanded="false">{{ 'circuits' | trans }} <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="{{ path('circuitNew') }}">{{ 'add.circuit' | trans }}</a></li>
+                                    <li><a href="{{ path('circuitList') }}">{{ 'list' | trans }}</a></li>
+
+                                </ul></li>
+                                    <li><a href="{{ path('positionNew') }}">{{ 'add.position' | trans }}</a></li>
+                            </ul>
+                        </div>
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+                        <div id="navbar" class="navbar-collapse collapse">
+                            <form class="navbar-form navbar-right form-inline" action="{{ path("fos_user_security_check") }}" method="post">
+                                {% if is_granted("IS_AUTHENTICATED_FULLY") %}
+                                <div class="dropdown form-group form-group-sm"><a href="#" class="dropdown-toggle"
+                                    data-toggle="dropdown" role="button" aria-haspopup="true"
+                                    aria-expanded="false">{{ app.user.username }}<span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="{{ path('fos_user_profile_edit') }}">{{ 'editar' | trans }}</a></li>
+                                        <li><a href="{{ path('fos_user_change_password') }}">{{ 'modificar password' | trans }}</a></li>
+                                        <li><a href="{{ path('fos_user_security_logout') }}">{{ 'salir' | trans }}</a></li>
+
+                                    </ul></div>
+                                    {% else %}
+                                    <div class="form-group form-group-sm">
+                                        <input type="text" class="form-control" name="_username" placeholder="{{ 'nomUs' | trans }}">
+                                    </div>
+                                    <div class="form-group form-group-sm">
+                                        <input type="password" class="form-control" name="_password" placeholder="{{ 'clave' | trans }}">
+                                    </div>                    
+                                    <div class="form-group form-group-sm">
+                                        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}"/>
+                                        <button type="submit" class="btn btn-info"><strong>{{ 'entrar' | trans }}</strong></button>
+                                        <a type="button" href="{{  path('fos_user_registration_register') }}" class="btn btn-info"><strong>{{ 'registrarse' | trans }}</strong></a>
+                                    </div>
+                                    {% endif %}
+
+                                    <div class="form-group form-group-sm">
+                                        <ul class="nav navbar-nav navbar-right">                    
+                                            <li class="dropdown">
+                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                                                role="button" aria-haspopup="true" aria-expanded="false">
+                                                <span class="glyphicon glyphicon-flag"></span> {{ app.request.locale}} <span class="caret"></span></a>
+                                                <ul class="dropdown-menu">
+                                                    <li><a href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'es'})) }}">es</a></li>                          
+                                                    <li><a href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'en'})) }}">en</a></li>
+                                                </ul>
+                                            </li> 
+                                        </ul>
+                                    </div>
+                                </form>
+                            </div>
+
+
+                        </div>
+                    </nav>
+                    <div style="margin-top:100px; ">
+                        {% block body %}{% endblock %}
+                    </div>
+                    {% block javascripts %}{% endblock %}
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+                    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+                </body>
+                </html>
