@@ -55,7 +55,7 @@
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::prepareDeploymentTarget"
         ],
         "compile": [ 
-			"php app/console doctrine:schema:update --force" 
+			"php bin/console doctrine:schema:update --force" 
 		]
     },
     "config" : {
@@ -64,6 +64,7 @@
     "extra" : {
         "symfony-app-dir" : "app",
         "symfony-web-dir" : "web",
+        "symfony-bin-dir" : "bin",
         "symfony-assets-install" : "relative",
         "incenteev-parameters" : {
             "file" : "app/config/parameters.yml",
